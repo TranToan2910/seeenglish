@@ -4,12 +4,13 @@ import { NativeScriptModule } from 'nativescript-angular/nativescript.module';
 import { NO_ERRORS_SCHEMA } from '@angular/core'
 
 import { AppComponent } from './app.component';
-// import { LoginComponent } from './pages/login/login.component';
+import { LoginComponent } from './pages/login/login.component';
 
 @NgModule({
   imports: [NativeScriptModule],
   declarations: [
-    AppComponent
+    AppComponent,
+    LoginComponent
   ],
   bootstrap: [AppComponent],
   schemas: [

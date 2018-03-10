@@ -2,6 +2,12 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'my-app',
-  template: `<Label text="hello world!"></Label>`
+  template: `
+  <StackLayout>
+    <Label text="hello world!"></Label>
+    <app-login></app-login>
+  </StackLayout>
+  `
 })
-export class AppComponent {}
+export class AppComponent {
+}
