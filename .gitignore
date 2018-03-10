@@ -1,0 +1,15 @@
+source/SeeEnglish/npm-debug.log
+source/SeeEnglish/.DS_Store
+
+source/SeeEnglish/*.js.map
+source/SeeEnglish/app/**/*.js
+source/SeeEnglish/e2e/**/*.js
+source/SeeEnglish/e2e/reports/
+source/SeeEnglish/hooks/
+source/SeeEnglish/lib/
+source/SeeEnglish/node_modules/
+source/SeeEnglish/platforms/
+source/SeeEnglish/tmp/
+source/SeeEnglish/typings/
+source/SeeEnglish/report/
+source/SeeEnglish/test-results.xml
