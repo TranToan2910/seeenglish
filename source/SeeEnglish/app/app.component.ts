@@ -4,7 +4,6 @@ import { Component } from '@angular/core';
   selector: 'my-app',
   template: `
   <StackLayout>
-    <Label text="hello world!"></Label>
     <app-login></app-login>
   </StackLayout>
   `
