@@ -1,24 +1,63 @@
 import {
-    Component
+    Component, AfterViewChecked, AfterViewInit, OnInit, ViewChild, ContentChild, ViewContainerRef, ElementRef
 } from '@angular/core';
-
+import { User } from '../../shared/user/user';
+import { UserService } from '../../shared//user/user.service';
+import { Router } from '@angular/router';
+import { Page } from "ui/page";
+import { Color } from "color";
+import { View } from "ui/core/view";
 
 @Component({
     selector: 'app-login',
-    templateUrl: 'pages/login/login.html',
-    // templateUrl: './login.html', => not work, look like a bug
-    styleUrls: ['pages/login/login-common.css', 'pages/login/login.css']
-    // styleUrls: ['./login-common.css'] => not work, look like a bug
+    providers: [UserService],
+    moduleId: module.id,
+    templateUrl: './login.html',
+    // templateUrl: 'pages/login/login.html',
+    // templateUrl: './login.html', => not work, look like a bug => not bug
+    styleUrls: ['./login-common.css', './login.css']
+    // styleUrls: ['pages/login/login-common.css', 'pages/login/login.css']
+    // styleUrls: ['./login-common.css'] => not work, look like a bug => not bug
+    // explaination: default url is native to the 'app' folder
+    // however when add moduleId: module.id, => it is used to resolve relative app to the current folder
 })
-export class LoginComponent {
-    email: string;
+export class LoginComponent implements OnInit, AfterViewInit{
+    user: User;
 
-    constructor() {
-        this.email = '';
+    @ViewChild('container') panel: ElementRef;
+
+    // page í provide by native script
+    constructor(private userservice: UserService, private router: Router, private page: Page) {
+        this.user = new User();
     }
 
     public submit(): void {
         console.log("log in button tapped");
-        alert("You’re login as : " + this.email);
+        if (!this.userservice.login(this.user)) {
+            alert('Please enter your loging information');
+        } else {
+            // alert('You are login as : ' + this.user.email);
+            let container = <View>this.panel.nativeElement;
+            container.animate({
+                backgroundColor: new Color("#301217"),
+                duration: 200
+            });
+            setTimeout(
+                ()=> {
+                    this.router.navigate(['./list']);
+                },
+                3000);
+        }
+    }
+
+    ngOnInit() {
+        console.log('on Init');
+        console.log(this.panel);
+        this.page.actionBarHidden = true;
+        this.page.backgroundImage = "res://bg_login";
+    }
+
+    ngAfterViewInit() {
+        console.log(this.panel);
     }
 }
