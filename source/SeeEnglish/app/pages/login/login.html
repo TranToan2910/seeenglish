@@ -1,8 +1,13 @@
 <StackLayout>
     <TextField hint="Email Address" keyboardType="email"
-      autocorrect="false" autocapitalizationType="none"></TextField>
+      autocorrect="false" autocapitalizationType="none"
+      [(ngModel)]="email"></TextField>
+      <!-- <TextField hint="Email Address" keyboardType="email"
+      autocorrect="false" autocapitalizationType="none"
+      [text]="email"></TextField> -->
+
     <TextField hint="Password" secure="true"></TextField>
 
-    <Button text="Sign in" class="submit-button"></Button>
+    <Button text="Sign in" class="submit-button" (tap)="submit()"></Button>
     <Button text="Sign up for Groceries"></Button>
   </StackLayout>

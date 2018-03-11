@@ -11,14 +11,14 @@ import {
     // styleUrls: ['./login-common.css'] => not work, look like a bug
 })
 export class LoginComponent {
+    email: string;
 
+    constructor() {
+        this.email = '';
+    }
+
+    public submit(): void {
+        console.log("log in button tapped");
+        alert("You’re login as : " + this.email);
+    }
 }
-
-// @Component({
-//     selector: 'app-login',
-//     templateUrl: './login.html',
-//     styleUrls: ['./login-common.css', './login.css']
-// })
-// export class LoginComponent {
-
-// }
