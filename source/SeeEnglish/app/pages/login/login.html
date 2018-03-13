@@ -1,7 +1,9 @@
-<StackLayout>
+<StackLayout #container>
+    <Image src="res://logo_login" stretch="none" horizontalAlignment="center" decodeWidth="400" decodeHeight="400" loadMode="async"></Image>
+
     <TextField hint="Email Address" keyboardType="email"
       autocorrect="false" autocapitalizationType="none"
-      [(ngModel)]="email"></TextField>
+      [(ngModel)]="user.email"></TextField>
       <!-- <TextField hint="Email Address" keyboardType="email"
       autocorrect="false" autocapitalizationType="none"
       [text]="email"></TextField> -->

@@ -3,9 +3,7 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'my-app',
   template: `
-  <StackLayout>
-    <app-login></app-login>
-  </StackLayout>
+  <page-router-outlet></page-router-outlet>
   `
 })
 export class AppComponent {
