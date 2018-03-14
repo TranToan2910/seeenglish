@@ -44,7 +44,8 @@ export class LoginComponent implements OnInit, AfterViewInit{
             });
             setTimeout(
                 ()=> {
-                    this.router.navigate(['./list']);
+                    console.log('go to contact screen');
+                    this.router.navigate(['./contact']);
                 },
                 3000);
         }
@@ -54,7 +55,7 @@ export class LoginComponent implements OnInit, AfterViewInit{
         console.log('on Init');
         console.log(this.panel);
         this.page.actionBarHidden = true;
-        this.page.backgroundImage = "res://bg_login";
+        // this.page.backgroundImage = "res://bg_login";
     }
 
     ngAfterViewInit() {
