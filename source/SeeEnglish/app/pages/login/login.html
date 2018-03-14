@@ -1,15 +1,21 @@
-<StackLayout #container>
-    <Image src="res://logo_login" stretch="none" horizontalAlignment="center" decodeWidth="400" decodeHeight="400" loadMode="async"></Image>
+<Page class="page">
+    <ActionBar title="SeeEnglish" icon="" class="action-bar">
+    </ActionBar>
 
-    <TextField hint="Email Address" keyboardType="email"
-      autocorrect="false" autocapitalizationType="none"
-      [(ngModel)]="user.email"></TextField>
-      <!-- <TextField hint="Email Address" keyboardType="email"
-      autocorrect="false" autocapitalizationType="none"
-      [text]="email"></TextField> -->
+    <StackLayout #container id="login-form" class="form">
+        <Image src="res://logo_login" stretch="none" horizontalAlignment="center" decodeWidth="400" decodeHeight="400" loadMode="async"></Image>
 
-    <TextField hint="Password" secure="true"></TextField>
+        <StackLayout class="input-field">
+            <TextField hint="Email Address" keyboardType="email" autocorrect="false" autocapitalizationType="none" class="input" [(ngModel)]="user.email"></TextField>
+            <StackLayout class="hr-light"></StackLayout>
+        </StackLayout>
 
-    <Button text="Sign in" class="submit-button" (tap)="submit()"></Button>
-    <Button text="Sign up for Groceries"></Button>
-  </StackLayout>
+        <StackLayout class="input-field">
+            <TextField hint="Password" secure="true" class="input"></TextField>
+            <StackLayout class="hr-light"></StackLayout>
+        </StackLayout>
+
+        <Button text="Sign in" class="btn btn-primary btn-active" (tap)="submit()"></Button>
+        <Button text="Sign up" class="btn btn-primary btn-active"></Button>
+    </StackLayout>
+</Page>
