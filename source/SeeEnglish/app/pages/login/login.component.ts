@@ -26,7 +26,7 @@ export class LoginComponent implements OnInit, AfterViewInit{
 
     @ViewChild('container') panel: ElementRef;
 
-    // page í provide by native script
+    // page is provide by native script
     constructor(private userservice: UserService, private router: Router, private page: Page) {
         this.user = new User();
     }
@@ -36,15 +36,9 @@ export class LoginComponent implements OnInit, AfterViewInit{
         if (!this.userservice.login(this.user)) {
             alert('Please enter your loging information');
         } else {
-            // alert('You are login as : ' + this.user.email);
-            let container = <View>this.panel.nativeElement;
-            container.animate({
-                backgroundColor: new Color("#301217"),
-                duration: 200
-            });
             setTimeout(
                 ()=> {
-                    console.log('go to contact screen');
+                    console.log('go to contact screen')
                     this.router.navigate(['./contact']);
                 },
                 2000);
@@ -54,8 +48,7 @@ export class LoginComponent implements OnInit, AfterViewInit{
     ngOnInit() {
         console.log('on Init');
         console.log(this.panel);
-        // this.page.actionBarHidden = true;
-        // this.page.backgroundImage = "res://bg_login";
+        this.page.actionBarHidden = true;
     }
 
     ngAfterViewInit() {
