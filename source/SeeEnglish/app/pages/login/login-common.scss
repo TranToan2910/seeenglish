@@ -26,14 +26,22 @@ TextField {
 #login-form {
     margin-left: 30;
     margin-right: 30;
-    padding-bottom: 15;
-    background-color: white;
-    height: 340;
+    // background-color: white;
+    height: 60%;
 }
 
-Button,
+Button {
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: 16;
+    margin-right: 16;
+    width: 90%;
+}
+
 TextField {
     margin-left: 16;
     margin-right: 16;
-    margin-bottom: 10;
+    width: 100%;
+    color: white;
+    placeholder-color: white;
 }

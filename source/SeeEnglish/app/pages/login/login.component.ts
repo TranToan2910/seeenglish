@@ -7,6 +7,8 @@ import { Router } from '@angular/router';
 import { Page } from "ui/page";
 import { Color } from "color";
 import { View } from "ui/core/view";
+import * as Toast from "nativescript-toast";
+import * as utils from "utils/utils";
 
 @Component({
     selector: 'app-login',
@@ -24,25 +26,36 @@ import { View } from "ui/core/view";
 export class LoginComponent implements OnInit, AfterViewInit{
     user: User;
 
+    isLoading: boolean;
+
     @ViewChild('container') panel: ElementRef;
 
     // page is provide by native script
     constructor(private userservice: UserService, private router: Router, private page: Page) {
         this.user = new User();
+        this.user.email = 'abc@xyz,com';
+        this.isLoading = false;
     }
 
     public submit(): void {
-        console.log("log in button tapped");
+        console.log('log in button tapped');
         if (!this.userservice.login(this.user)) {
-            alert('Please enter your loging information');
+            // alert('Please enter your loging information');
+            Toast.makeText('Please enter your loging information').show();
         } else {
+            this.isLoading = true;
             setTimeout(
                 ()=> {
                     console.log('go to contact screen')
                     this.router.navigate(['./contact']);
                 },
-                2000);
+                1500);
         }
+    }
+
+    public forgetPassword() {
+        console.log('forget password');
+        utils.openUrl("https://seeenglish.vn/?login=https%3A%2F%2Fseeenglish.vn&action=lost_password");
     }
 
     ngOnInit() {
