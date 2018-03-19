@@ -33,7 +33,7 @@ export class LoginComponent implements OnInit, AfterViewInit{
     // page is provide by native script
     constructor(private userservice: UserService, private router: Router, private page: Page) {
         this.user = new User();
-        this.user.email = 'abc@xyz,com';
+        this.user.email = 'abc@xyz.com';
         this.isLoading = false;
     }
 
@@ -46,7 +46,8 @@ export class LoginComponent implements OnInit, AfterViewInit{
             this.isLoading = true;
             setTimeout(
                 ()=> {
-                    console.log('go to contact screen')
+                    console.log('go to contact screen');
+                    this.isLoading = false;
                     this.router.navigate(['./contact']);
                 },
                 1500);
