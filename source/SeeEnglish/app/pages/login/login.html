@@ -5,7 +5,7 @@
     <GridLayout rows="*">
         <ActivityIndicator row="0" class="activity-indicator" [busy]="isLoading" [visibility]="isLoading ? 'visible' : 'collapse'"
             horizontalAlignment="center" verticalAlignment="center"></ActivityIndicator>
-        <StackLayout row="0" #container id="login-form" class="form" [visibility]="isLoading ? 'collapse' : 'visible' ">
+        <StackLayout row="0" #container id="login-form" class="form">
             <Image src="res://see_e_logo" stretch="none" horizontalAlignment="center" loadMode="async"></Image>
 
             <StackLayout class="input-field">
@@ -18,9 +18,9 @@
                 <StackLayout class="hr-light"></StackLayout>
             </StackLayout>
 
-            <Button text="Sign in" class="btn btn-primary btn-active" (tap)="submit()"></Button>
-            <Button text="Sign up" class="btn btn-primary btn-active"></Button>
-            <Button text="Forget your password" class="btn btn-primary btn-active" (tap)="forgetPassword()"></Button>
+            <Button text="Sign in" class="btn btn-primary btn-active" (tap)="onTapLogin()"></Button>
+            <Button text="Sign up" class="btn btn-primary btn-active" (tap)="onTapSignUp()"></Button>
+            <Button text="Forget your password" class="btn btn-primary btn-active" (tap)="onTapForgetPassword()"></Button>
         </StackLayout>
     </GridLayout>
 </Page>

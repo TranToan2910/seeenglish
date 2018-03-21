@@ -33,11 +33,11 @@ export class LoginComponent implements OnInit, AfterViewInit{
     // page is provide by native script
     constructor(private userservice: UserService, private router: Router, private page: Page) {
         this.user = new User();
-        this.user.email = 'abc@xyz,com';
+        this.user.email = 'abc@xyz.com';
         this.isLoading = false;
     }
 
-    public submit(): void {
+    public onTapLogin(): void {
         console.log('log in button tapped');
         if (!this.userservice.login(this.user)) {
             // alert('Please enter your loging information');
@@ -46,16 +46,28 @@ export class LoginComponent implements OnInit, AfterViewInit{
             this.isLoading = true;
             setTimeout(
                 ()=> {
-                    console.log('go to contact screen')
+                    console.log('go to contact screen');
+                    this.isLoading = false;
                     this.router.navigate(['./contact']);
                 },
                 1500);
         }
     }
 
-    public forgetPassword() {
+    public onTapForgetPassword() {
         console.log('forget password');
         utils.openUrl("https://seeenglish.vn/?login=https%3A%2F%2Fseeenglish.vn&action=lost_password");
+    }
+
+    public onTapSignUp() {
+        this.isLoading = true;
+        setTimeout(
+            ()=> {
+                console.log('go to contact screen');
+                this.isLoading = false;
+                this.router.navigate(['./toeic-test']);
+            },
+            1500);
     }
 
     ngOnInit() {
