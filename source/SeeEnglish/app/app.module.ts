@@ -13,7 +13,7 @@ import { NO_ERRORS_SCHEMA } from '@angular/core'
 import {routes, navigatableComponents} from './app.routing';
 
 import { AppComponent } from './app.component';
-import { LoginComponent } from './pages/login/login.component';
+import { SeeGuiSharedModule } from './shared/see-gui-shared.module';
 
 @NgModule({
   imports: [
@@ -22,7 +22,8 @@ import { LoginComponent } from './pages/login/login.component';
     NativeScriptHttpModule,
     NativeScriptRouterModule, // need to import this too, a bit different from angular maybe
     NativeScriptRouterModule.forRoot(routes),
-    NativeScriptUISideDrawerModule
+    NativeScriptUISideDrawerModule,
+    SeeGuiSharedModule
   ],
   declarations: [
     AppComponent,
