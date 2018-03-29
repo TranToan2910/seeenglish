@@ -27,6 +27,7 @@ export class QuizComponent implements AfterViewInit, OnInit {
 
     ngOnInit() {
         this.mainContentText = "SideDrawer for NativeScript can be easily setup in the HTML definition of your page by defining tkDrawerContent and tkMainContent. The component has a default transition and position and also exposes notifications related to changes in its state. Swipe from left to open side drawer.";
+        this.mainContentText = "Allo";
     }
 
     get mainContentText() {

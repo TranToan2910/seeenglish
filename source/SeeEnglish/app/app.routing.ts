@@ -16,5 +16,4 @@ export const navigatableComponents = [
     ContactComponent,
     QuizComponent,
     ToeicTestComponent
-    
 ];
