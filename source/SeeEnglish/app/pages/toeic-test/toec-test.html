@@ -1,37 +1,15 @@
 <Page class="page">
-    <ActionBar title="SeeEnglish" icon="" class="action-bar">
-    </ActionBar>
-    <!-- <GridLayout rows="*">
-        <ActivityIndicator row="0" class="activity-indicator" [busy]="isLoading" [visibility]="isLoading ? 'visible' : 'collapse'"
-            horizontalAlignment="center" verticalAlignment="center"></ActivityIndicator> -->
-            <RadSideDrawer showOverNavigation="true" tkToggleNavButton row="0">
-                <StackLayout tkDrawerContent class="sidedrawer-left">
-                    <StackLayout class="sidedrawer-header">
-                        <Label class="sidedrawer-header-brand" text="User Information"></Label>
-                    </StackLayout>
-                    <StackLayout class="sidedrawer-content">
-                            <GridLayout class="sidedrawer-list-item" rows="*" columns="*">
-                                <Button text="Toeic Test" class="sidedrawer-list-item-text" [nsRouterLink]="['/toeic-test']"></Button>
-                            </GridLayout>
-                            <GridLayout class="sidedrawer-list-item" rows="*" columns="*">
-                                <Button text="Quiz" class="sidedrawer-list-item-text" [nsRouterLink]="['/quiz']"></Button>
-                            </GridLayout>
-                            <GridLayout class="sidedrawer-list-item" rows="*" columns="*">
-                                <Button text="Information" class="sidedrawer-list-item-text" [nsRouterLink]="['/contact']"></Button>
-                            </GridLayout>
-                            <GridLayout class="sidedrawer-list-item" rows="*" columns="*">
-                                <Button text="Contact" class="sidedrawer-list-item-text" [nsRouterLink]="['/contact']"></Button>
-                            </GridLayout>
-                    </StackLayout>
-                    <!-- <Label text="Close Drawer" color="lightgray" padding="10" style="horizontal-align: center" (tap)="onCloseDrawerTap()"></Label> -->
-                </StackLayout>
-                <StackLayout tkMainContent>
-                    <!-- <ActionBar title="SeeEnglish 2" icon="" class="action-bar">
-                    </ActionBar> -->
-                    <Label class="h2 text-center" text="SEE ENGLISH CENTRE" textWrap="true"></Label>
-                    <!-- <Label [text]="mainContentText" textWrap="true" class="drawerContentText"></Label>
-                    <Button text="OPEN DRAWER" (tap)="openDrawer()" class="drawerContentButton"></Button> -->
-                </StackLayout>
-            </RadSideDrawer>
-    <!-- </GridLayout> -->
-</Page>
+        <ActionBar title="" icon="" class="action-bar">
+        </ActionBar>
+        <app-side-drawer-page-template>
+            <StackLayout>
+                <Label class="h2 text-center" text="This is Toeic-Test screen" textWrap="true"></Label>
+                <!-- <Label class="body text-center" text="Chủ quyền: Công ty TNHH TM&DV SEE English" textWrap="true"></Label>
+                <Label class="body text-center" text="Địa chỉ: Số 101/3 Đình Nghi Xuân, Phường Bình Trị Đông, Quận Bình Tân, Tp.HCM" textWrap="true"></Label>
+                <Label class="body text-center" text="Số điện thoại: 09777.83920 (Zalo)" textWrap="true"></Label>
+                <Label class="body text-center" text="Email: hotro@seeenglish.vn – seeenglish.vn@gmail.com" textWrap="true"></Label>
+                <Label class="body text-center" text="Skype: seeenglish.vn" textWrap="true"></Label>
+                <Label class="body text-center" text="Facebook: facebook.com/seeenglish.vn" textWrap="true"></Label> -->
+            </StackLayout>
+        </app-side-drawer-page-template>
+    </Page>

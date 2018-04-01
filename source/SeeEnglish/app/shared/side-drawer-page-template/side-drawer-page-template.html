@@ -4,7 +4,7 @@
                 <Image
                     class="sidedrawer-header-image">
                 </Image>
-                <Label class="sidedrawer-header-brand" text="{{userInfo}}"></Label>
+                <Label class="sidedrawer-header-brand" text="{{userInfo}}" (tap)="navigateTo(userInfocommands)"></Label>
             </StackLayout>
             <ScrollView>
                 <StackLayout class="sidedrawer-content">
