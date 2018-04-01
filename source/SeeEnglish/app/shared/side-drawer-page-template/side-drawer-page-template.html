@@ -1,18 +1,35 @@
-<!-- <RadSideDrawer showOverNavigation="true" tkToggleNavButton [transition]="drawerTransition">
+<RadSideDrawer showOverNavigation="true" tkToggleNavButton [transition]="drawerTransition">
         <StackLayout tkDrawerContent class="sidedrawer-left">
             <StackLayout class="sidedrawer-header">
-                <Label class="sidedrawer-header-brand" text="User Information"></Label>
+                <Image
+                    class="sidedrawer-header-image">
+                </Image>
+                <Label class="sidedrawer-header-brand" text="{{userInfo}}"></Label>
             </StackLayout>
-            <StackLayout class="sidedrawer-content">
-                    <GridLayout class="sidedrawer-list-item" rows="*" columns="*">
-                        <Button text="Toeic Test" class="sidedrawer-list-item-text" [nsRouterLink]="['/toeic-test']"></Button>
-                    </GridLayout>
-            </StackLayout>
+            <ScrollView>
+                <StackLayout class="sidedrawer-content">
+                        <GridLayout class="sidedrawer-list-item borderless-btn" rows="*" columns="*"
+                                    *ngFor="let nav of sideItems">
+                            <Button [text]="nav.name" class="sidedrawer-list-item-text" (tap)="navigateTo(nav.commands)"></Button>
+                        </GridLayout>
+                </StackLayout>
+            </ScrollView>
         </StackLayout>
         <StackLayout tkMainContent>
-            <Label text="This is contact screen" class="h2 text-center" textWrap="true"></Label>
-            <ng-content ></ng-content>
+            <StackLayout [visibility]="isContentVisible ? 'visible' : 'collapsed'">
+                <ng-content ></ng-content>
+            </StackLayout>
+            <GridLayout
+                class="loader-container"
+                [visibility]="!isContentVisible ? 'visible' : 'collapsed'">
+            <ActivityIndicator
+                width="30"
+                height="30"
+                [busy]="!isContentVisible"
+                class="activity-indicator">
+            </ActivityIndicator>
+            </GridLayout>
         </StackLayout>
-</RadSideDrawer> -->
+</RadSideDrawer>
 
-<Label text="This is template component" class="h2 text-center" textWrap="true"></Label>
+<!-- <Label text="This is drawer component" class="h2 text-center" textWrap="true"></Label> -->
