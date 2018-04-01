@@ -46,7 +46,7 @@ export class SideItem {
     // childItem: Array<SideItem>
 }
 
-export const SEE_SIDE_MENU: SideItem[] = [
+const SEE_SIDE_MENU: SideItem[] = [
     {
         name: 'Toeic-Test',
         commands: ['/toeic-test']
@@ -56,11 +56,16 @@ export const SEE_SIDE_MENU: SideItem[] = [
         commands: ['/quiz']
     },
     {
+        name: 'Information',
+        commands: ['/info']
+    },
+    {
         name: 'Contact',
         commands: ['/contact']
     }
-]
+];
 
+const USER_INFO_COMMAND = ['./user-info'];
 
 @Component({
     selector: 'app-side-drawer-page-template',
@@ -93,6 +98,8 @@ export class SideDrawerPageTemplateComponent implements AfterContentInit, AfterV
      * List of item to display on side drawer menu
      */
     sideItems: Array<SideItem>;
+    
+    userInfocommands: Array<String>;
 
     userInfo = 'John smith';
     
@@ -107,6 +114,7 @@ export class SideDrawerPageTemplateComponent implements AfterContentInit, AfterV
         this.setActionBarIcon(this.page);
         this.setDrawerTransition();
         this.sideItems = SEE_SIDE_MENU;
+        this.userInfocommands = USER_INFO_COMMAND;
     }
 
     /**
@@ -199,6 +207,7 @@ export class SideDrawerPageTemplateComponent implements AfterContentInit, AfterV
 
             this.drawer.on('drawerClosed', ()=> { // event catch javascript style, seem using plain native script
                 this.ngzone.run(()=>{
+                    // dummy load time
                     setTimeout(() => {
                     this.routerExtensions.navigate(routeCommands, {
                         clearHistory: true,
@@ -206,7 +215,7 @@ export class SideDrawerPageTemplateComponent implements AfterContentInit, AfterV
                     });
                     this.isContentVisible = true;
                     this.drawer.off('drawerClosed');
-                    }, 3000);
+                    }, 2000);
                 })
             })
         }

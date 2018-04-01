@@ -1,26 +1,15 @@
 <Page class="page">
-    <ActionBar title="SeeEnglish" icon="" class="action-bar">
-    </ActionBar>
-    <RadSideDrawer showOverNavigation="true" tkExampleTitle tkToggleNavButton>
-        <StackLayout tkDrawerContent class="sideStackLayout">
-            <StackLayout class="sideTitleStackLayout">
-                <Label text="Navigation Menu"></Label>
+        <ActionBar title="" icon="" class="action-bar">
+        </ActionBar>
+        <app-side-drawer-page-template>
+            <StackLayout>
+                <Label class="h2 text-center" text="This is Quiz screen" textWrap="true"></Label>
+                <!-- <Label class="body text-center" text="Chủ quyền: Công ty TNHH TM&DV SEE English" textWrap="true"></Label>
+                <Label class="body text-center" text="Địa chỉ: Số 101/3 Đình Nghi Xuân, Phường Bình Trị Đông, Quận Bình Tân, Tp.HCM" textWrap="true"></Label>
+                <Label class="body text-center" text="Số điện thoại: 09777.83920 (Zalo)" textWrap="true"></Label>
+                <Label class="body text-center" text="Email: hotro@seeenglish.vn – seeenglish.vn@gmail.com" textWrap="true"></Label>
+                <Label class="body text-center" text="Skype: seeenglish.vn" textWrap="true"></Label>
+                <Label class="body text-center" text="Facebook: facebook.com/seeenglish.vn" textWrap="true"></Label> -->
             </StackLayout>
-            <StackLayout class="sideStackLayout">
-                <Label text="Primary" class="sideLabel sideLightGrayLabel"></Label>
-                <Label text="Social" class="sideLabel"></Label>
-                <Label text="Promotions" class="sideLabel"></Label>
-                <Label text="Labels" class="sideLabel sideLightGrayLabel"></Label>
-                <Label text="Important" class="sideLabel"></Label>
-                <Label text="Starred" class="sideLabel"></Label>
-                <Label text="Sent Mail" class="sideLabel"></Label>
-                <Label text="Drafts" class="sideLabel"></Label>
-            </StackLayout>
-            <Label text="Close Drawer" color="lightgray" padding="10" style="horizontal-align: center" (tap)="onCloseDrawerTap()"></Label>
-        </StackLayout>
-        <StackLayout tkMainContent>
-            <Label [text]="mainContentText" textWrap="true" class="drawerContentText"></Label>
-            <Button text="OPEN DRAWER" (tap)="openDrawer()" class="drawerContentButton"></Button>
-        </StackLayout>
-    </RadSideDrawer>
-</Page>
+        </app-side-drawer-page-template>
+    </Page>
